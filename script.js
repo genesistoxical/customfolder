@@ -264,11 +264,7 @@ function toLocalCoords(pos, obj)
   const dx = pos.x - cx;
   const dy = pos.y - cy;
 
-  return
-  {
-    x: dx * Math.cos(angle) - dy * Math.sin(angle),
-    y: dx * Math.sin(angle) + dy * Math.cos(angle),
-  };
+  return { x: dx * Math.cos(angle) - dy * Math.sin(angle), y: dx * Math.sin(angle) + dy * Math.cos(angle) };
 }
 
 function modifySelectedImage(action)
@@ -489,13 +485,28 @@ fileInput.addEventListener("change", (e) =>
   img.onload = () =>
   {
     const aspect = img.width / img.height;
+    let width, height;
+
+    if (img.width >= img.height)
+    {
+      // Si el ancho es mayor o igual → redimensionar a 100px
+      width = 100;
+      height = 100 / aspect;
+    }
+    else
+    {
+      // Si la altura es mayor → redimensionar a 150px
+      height = 150;
+      width = 150 * aspect;
+    }
+
     const obj =
-	{
+    {
       img,
       x: 50 + images.length * 10,
       y: 50 + images.length * 10,
-      width: 100,
-      height: 100 / aspect,
+      width,
+      height,
       aspectRatio: aspect,
       rotation: 0,
     };
