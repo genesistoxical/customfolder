@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Custom Folder</title>
+    <link id="favicon" rel="icon" href="/customfolder/assets/favicon.png" type="image/png"/>
+    <meta charset="UTF-8" />
+    <title>Canvas SVG + Image Drag Resize</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"/>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <header>
+    <h1 style="font-family: Staatliches">Custom Folder</h1>
+    <p class="description">Create your own custom folder and download it in ICO format.</p>
+  </header>
+  <div id="contextMenu">
+    <button id="bringToFront">Bring to front</button>
+    <button id="sendToBack">Send to back</button>
+    <div class="separator"></div>
+    <button id="duplicate">Duplicate image</button>
+    <button id="delete">Delete image</button>
+  </div>
+  <body style="font-family: Inter">
+    <a class="github-fork-ribbon" href="https://github.com/genesistoxical/customfolder" data-ribbon="View on GitHub" title="View on GitHub">Fork me on GitHub</a>
+    <main>
+      <div id="controls">
+        <input type="file" style="display: none" name="file" id="fileInput" accept="image/*"/>
+        <input style="font-family: Inter" type="button" id="addImage" value="Add Image" onclick="document.getElementById('fileInput').click();"/>
+        <input type="color" id="colorPicker" value="#77c0ee" />
+      </div>
+      <canvas id="canvas" width="256" height="256"></canvas>
+      <div>
+        <button style="font-family: Inter" id="exportBtn">Save Icon</button>
+      </div>
+
+      <!-- Contenedor de los 6 recuadros -->
+      <div id="box-container">
+        <p>Folder style:</p>
+        <div class="box" data-color="#77C0EE" data-svg="N1"></div>
+        <div class="box" data-color="#77C0EE" data-svg="N2"></div>
+        <div class="box" data-color="#77C0EE" data-svg="R1"></div>
+        <div class="box" data-color="#77C0EE" data-svg="R2"></div>
+        <div class="box" data-color="#77C0EE" data-svg="S1"></div>
+        <div class="box" data-color="#77C0EE" data-svg="S2"></div>
+      </div>
+
+      <p class="link">
+        <a id="link-main" href="MIT.html" rel="modal:open">Made with ♡ under MIT LICENSE</a>
+      </p>
+    </main>
+    <footer>
+      <a href="https://genesistoxical.github.io/crystal-folders/" target="_blank" rel="nofollow">Crystal Folders</a>
+      <a href="about.html" rel="nofollow">About</a>
+      <a href="https://github.com/genesistoxical/customfolder" target="_blank" rel="nofollow">View on Github</a>
+    </footer>
+    <div class="bottom-div">
+      <ul class="circles">
+        <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+      </ul>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  </body>
+</html>
